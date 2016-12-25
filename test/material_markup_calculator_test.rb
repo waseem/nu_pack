@@ -1,4 +1,5 @@
-require './lib/nu_pack/material_markup_calculator'
+require File.expand_path(File.join(File.dirname(__FILE__), 'support'))
+require 'nu_pack/material_markup_calculator'
 require 'test/unit'
 
 class MaterialMarkupCalculatorTest < Test::Unit::TestCase

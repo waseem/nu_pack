@@ -1,4 +1,5 @@
-require './lib/nu_pack'
+require File.expand_path(File.join(File.dirname(__FILE__), 'support'))
+require 'nu_pack'
 require 'test/unit'
 
 class NuPackTest < Test::Unit::TestCase
