@@ -13,7 +13,13 @@ module NuPack
 
     def estimate
       flat_marked = @price * (1 + 0.05)
-      (flat_marked * (1 + @people * 0.012 + @material_markup_calculator.markup_for(@material))).round(2)
+      (flat_marked * (1 + @people * 0.012 + material_markup)).round(2)
+    end
+
+    private
+
+    def material_markup
+      @material_markup_calculator.markup_for(@material)
     end
   end
 end
