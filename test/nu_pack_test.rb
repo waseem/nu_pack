@@ -48,4 +48,14 @@ class NuPackTest < Test::Unit::TestCase
     assert_equal 271.19, NuPack::Calculator.new(price: 220, people: 2, material: 'books',
                                                 material_markup_calculator:  CustomMaterialMarkupCalculator.new).estimate
   end
+
+  class CustomPeopleMarkupCalculator
+    def markup_for(people)
+      people * 0.14
+    end
+  end
+  def test_custom_people_markup_calculator
+    assert_equal 2115.73, NuPack::Calculator.new(price: 1299.99, people: 3, material: 'food',
+                                                 people_markup_calculator: CustomPeopleMarkupCalculator.new).estimate
+  end
 end
