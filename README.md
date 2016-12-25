@@ -20,4 +20,6 @@ calculator.estimate #=> 1591.58
 
 # Tests
 
-`ruby test/nu_pack_test.rb; ruby test/material_markup_calculator_test.rb`
+Run whole test suite with `ruby test/suite.rb`.
+
+Run individual tests by running `*_test.rb` files under `test/`
