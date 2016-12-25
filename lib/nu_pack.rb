@@ -1,3 +1,5 @@
+require 'nu_pack/material_markup_calculator'
+
 module NuPack
   class Calculator
     def initialize(price, people, material)
@@ -8,19 +10,7 @@ module NuPack
 
     def estimate
       flat_marked = @price * (1 + 0.05)
-      (flat_marked * (1 + @people * 0.012 + markup_by_material)).round(2)
-    end
-
-    private
-
-    def markup_by_material
-      case @material
-      when 'food'        then 0.13
-      when 'electronics' then 0.02
-      when 'drugs'       then 0.075
-      else
-        0
-      end
+      (flat_marked * (1 + @people * 0.012 + MaterialMarkupCalculator.new(@material).markup)).round(2)
     end
   end
 end
