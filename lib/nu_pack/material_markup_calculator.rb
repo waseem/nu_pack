@@ -7,12 +7,8 @@ module NuPack
       'drugs'       => 0.075
     }
 
-    def initialize(material)
-      @material = material
-    end
-
-    def markup
-      MARKUPS[@material] || 0
+    def markup_for(material)
+      MARKUPS[material] || 0
     end
   end
 end

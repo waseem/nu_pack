@@ -28,18 +28,14 @@ class NuPackTest < Test::Unit::TestCase
   end
 
   class CustomMaterialMarkupCalculator
-    def initialize(material)
-      @material = material
-    end
-
-    def markup
+    def markup_for(material)
       {
         'books' => 0.15
-      }[@material] || 0
+      }[material] || 0
     end
   end
   def test_custom_material_markup_calculator
-    assert_equal 5772.04, NuPack::Calculator.new(5432, 1, 'food', CustomMaterialMarkupCalculator.new('food')).estimate
-    assert_equal 240.01, NuPack::Calculator.new(220, 2, 'books', CustomMaterialMarkupCalculator.new('books')).estimate
+    assert_equal 5772.04, NuPack::Calculator.new(5432, 1, 'food', CustomMaterialMarkupCalculator.new).estimate
+    assert_equal 271.19, NuPack::Calculator.new(220, 2, 'books', CustomMaterialMarkupCalculator.new).estimate
   end
 end

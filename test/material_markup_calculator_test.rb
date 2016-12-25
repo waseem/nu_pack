@@ -3,19 +3,23 @@ require 'nu_pack/material_markup_calculator'
 require 'test/unit'
 
 class MaterialMarkupCalculatorTest < Test::Unit::TestCase
+  def setup
+    @mmc = NuPack::MaterialMarkupCalculator.new
+  end
+
   def test_food
-    assert_equal 0.13, NuPack::MaterialMarkupCalculator.new('food').markup
+    assert_equal 0.13, @mmc.markup_for('food')
   end
 
   def test_drugs
-    assert_equal 0.075, NuPack::MaterialMarkupCalculator.new('drugs').markup
+    assert_equal 0.075, @mmc.markup_for('drugs')
   end
 
   def test_electronics
-    assert_equal 0.02, NuPack::MaterialMarkupCalculator.new('electronics').markup
+    assert_equal 0.02, @mmc.markup_for('electronics')
   end
 
   def test_non_existing
-    assert_equal 0, NuPack::MaterialMarkupCalculator.new('non_existing').markup
+    assert_equal 0, @mmc.markup_for('non_existing')
   end
 end

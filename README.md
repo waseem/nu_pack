@@ -18,6 +18,15 @@ calculator = NuPack::Calculator.new(1299.99, 3, 'food') # NuPack::Calculator.new
 calculator.estimate #=> 1591.58
 ```
 
+You can use your own material markup calculator:
+
+```
+calculator = NuPack::Calculator.new(1299.99, 3, 'food', my_material_markup_calculator)
+calculator.estimate
+```
+
+`my_material_markup_calculator` is an object that responds to `.markup_for(material)` and returns percentage fraction markup for the `material` in question.
+
 # Tests
 
 Run whole test suite with `ruby test/suite.rb`.
