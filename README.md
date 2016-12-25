@@ -14,7 +14,7 @@ Now you can do:
 
 ```
 require 'nu_pack'
-calculator = NuPack.new(1299.99, 3, 'food') # NuPack.new(base_price, people_for_job, material)
+calculator = NuPack::Calculator.new(1299.99, 3, 'food') # NuPack::Calculator.new(base_price, people_for_job, material)
 calculator.estimate #=> 1591.58
 ```
 
