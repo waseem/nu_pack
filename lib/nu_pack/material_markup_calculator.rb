@@ -1,17 +1,18 @@
 module NuPack
   class MaterialMarkupCalculator
+
+    MARKUPS = {
+      'food'        => 0.13,
+      'electronics' => 0.02,
+      'drugs'       => 0.075
+    }
+
     def initialize(material)
       @material = material
     end
 
     def markup
-      case @material
-      when 'food'        then 0.13
-      when 'electronics' then 0.02
-      when 'drugs'       then 0.075
-      else
-        0
-      end
+      MARKUPS[@material] || 0
     end
   end
 end
