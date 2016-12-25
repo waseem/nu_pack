@@ -14,14 +14,21 @@ Now you can do:
 
 ```
 require 'nu_pack'
-calculator = NuPack::Calculator.new(1299.99, 3, 'food') # NuPack::Calculator.new(base_price, people_for_job, material)
+calculator = NuPack::Calculator.new(price: 1299.99, people: 3, material: 'food')
 calculator.estimate #=> 1591.58
+```
+
+You can use your own flat markup. (Default is 5%)
+
+```
+calculator = NuPack::Calculator.new(price: 1299.99, flat_markup: 0.07, material: 'food')
+calculator.estimater
 ```
 
 You can use your own material markup calculator:
 
 ```
-calculator = NuPack::Calculator.new(1299.99, 3, 'food', my_material_markup_calculator)
+calculator = NuPack::Calculator.new(price: 1299.99, people: 3, material: 'food', material_markup_calculator: my_material_markup_calculator)
 calculator.estimate
 ```
 

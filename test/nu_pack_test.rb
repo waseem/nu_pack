@@ -23,6 +23,10 @@ class NuPackTest < Test::Unit::TestCase
     assert_equal 6199.81, NuPack::Calculator.new(price: 5432, material: 'drugs').estimate
   end
 
+  def test_default_custom_flat_markup
+    assert_equal 6495.04, NuPack::Calculator.new(price: 5432, flat_markup: 0.10, material: 'drugs').estimate
+  end
+
   def test_electronics_two_person
     assert_equal 735.28, NuPack::Calculator.new(price: 670.75, people: 2, material: 'electronics').estimate
   end
