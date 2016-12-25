@@ -8,7 +8,7 @@ Ruby 2.3
 
 # Usage
 
-First add the library to your `$LOAD_PATH`. (This should be handled by rubygems/bundler)
+First add the `lib/` of the project to your `$LOAD_PATH`. (This should be handled by rubygems/bundler)
 
 Now you can do:
 
@@ -20,4 +20,4 @@ calculator.estimate #=> 1591.58
 
 # Tests
 
-`ruby test/nu_pack_test.rb`
+`ruby test/nu_pack_test.rb; ruby test/material_markup_calculator_test.rb`
