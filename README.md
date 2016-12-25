@@ -34,6 +34,14 @@ calculator.estimate
 
 `my_material_markup_calculator` is an object that responds to `.markup_for(material)` and returns percentage fraction markup for the `material` in question.
 
+You can use your own people markup calculator:
+
+```
+  calculator = NuPack::Calculator.new(price: 1299.99, people: 3, material: 'food', people_markup_calculator: my_people_markup_calculator)
+  calculator.estimate
+```
+`my_people_markup_calculator` is an object that responds to `.markup_for(people)` and returns percentage fraction markup for the number of `people` in question.
+
 # Tests
 
 Run whole test suite with `ruby test/suite.rb`.
