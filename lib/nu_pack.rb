@@ -2,7 +2,8 @@ require 'nu_pack/material_markup_calculator'
 
 module NuPack
   class Calculator
-    def initialize(price, people, material, material_markup_calculator = MaterialMarkupCalculator.new)
+    def initialize(price:, material:, people: 1,
+                   material_markup_calculator: MaterialMarkupCalculator.new)
       @price  = price.abs   # Price should be positive
       @people = people.abs # People should be positive
 
