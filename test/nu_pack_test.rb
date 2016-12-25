@@ -6,6 +6,14 @@ class NuPackTest < Test::Unit::TestCase
     assert_equal 1591.58, NuPack.new(1299.99, 3, 'food').estimate
   end
 
+  def test_negative_price
+    assert_equal 1591.58, NuPack.new(-1299.99, 3, 'food').estimate
+  end
+
+  def test_negative_people
+    assert_equal 1591.58, NuPack.new(1299.99, -3, 'food').estimate
+  end
+
   def test_drugs_one_person
     assert_equal 6199.81, NuPack.new(5432, 1, 'drugs').estimate
   end
