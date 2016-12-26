@@ -41,7 +41,7 @@ You can use your own people markup calculator:
   calculator.estimate
 ```
 
-`my_people_markup_calculator` is an object that responds to `.markup_for(people)` and returns percentage fraction markup for the number of `people` in question.
+`my_people_markup_calculator` is an object that responds to `.markup` and returns percentage markup fraction for the number of `people` in question. In case it is `nil`, `NuPack::PeopleMarkupCalculator` is used. Notice that `NuPack::Calculator` does not multiply the markup fraction with number of people. It is sole job of the markup object to calculate and provide the final percent fraction.
 
 
 # Tests

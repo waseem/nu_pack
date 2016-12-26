@@ -2,8 +2,12 @@ module NuPack
   class PeopleMarkupCalculator
     MARKUP = 0.012
 
-    def markup_for(people)
-      MARKUP * people
+    def initialize(people)
+      @people = people
+    end
+
+    def markup
+      MARKUP * @people
     end
   end
 end
