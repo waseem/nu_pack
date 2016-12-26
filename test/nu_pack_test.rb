@@ -42,12 +42,16 @@ class NuPackTest < Test::Unit::TestCase
   end
 
   class CustomPeopleMarkupCalculator
-    def markup_for(people)
-      people * 0.14
+    def initialize(people)
+      @people = people
+    end
+
+    def markup
+      @people * 0.14
     end
   end
   def test_custom_people_markup_calculator
     assert_equal 2115.73, NuPack::Calculator.new(price: 1299.99, people: 3, material: 'food',
-                                                 people_markup_calculator: CustomPeopleMarkupCalculator.new).estimate
+                                                 people_markup_calculator: CustomPeopleMarkupCalculator.new(3)).estimate
   end
 end
