@@ -8,7 +8,7 @@ Ruby 2.3
 
 # Usage
 
-First add the `lib/` of the project to your `$LOAD_PATH`. (This should be handled by rubygems/bundler)
+First add the `lib/` of the project to your `$LOAD_PATH`. (This should be handled by rubygems/bundler). You can use `ruby /path/to/project/runner.rb` for example usage.
 
 Now you can do:
 
@@ -42,6 +42,7 @@ You can use your own people markup calculator:
 ```
 
 `my_people_markup_calculator` is an object that responds to `.markup_for(people)` and returns percentage fraction markup for the number of `people` in question.
+
 
 # Tests
 
