@@ -31,7 +31,7 @@ class NuPackTest < Test::Unit::TestCase
     def markup
       {
         'books' => 0.15
-      }[material] || 0
+      }[@material] || 0
     end
   end
   def test_custom_material_markup_calculator

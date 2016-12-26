@@ -32,7 +32,7 @@ calculator = NuPack::Calculator.new(price: 1299.99, people: 3, material: 'food',
 calculator.estimate
 ```
 
-`my_material_markup_calculator` is an object that responds to `.markup_for(material)` and returns percentage fraction markup for the `material` in question.
+`my_material_markup_calculator` is an object that responds to `.markup` and returns percentage fraction markup for the `material` in question. In case it is `nil`, `NuPack::MaterialMarkupCalculator` is used.
 
 You can use your own people markup calculator:
 
