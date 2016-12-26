@@ -3,7 +3,7 @@ module NuPack
     MARKUP = 0.012
 
     def initialize(people)
-      @people = people
+      @people = people.abs
     end
 
     def markup

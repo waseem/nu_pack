@@ -9,4 +9,9 @@ class PeopleMarkupCalculatorTest < Test::Unit::TestCase
       assert_equal 0.012 * people, markup
     end
   end
+
+  def test_negative_markup
+    people = -3
+    assert_equal (0.012 * people).abs, NuPack::PeopleMarkupCalculator.new(people).markup
+  end
 end

@@ -6,10 +6,10 @@ module NuPack
     def initialize(price:, material:, people: 1, flat_markup: 0.05,
                    material_markup_calculator: nil,
                    people_markup_calculator: nil)
-      @price  = price.abs   # Price should be positive
+      @price  = price
       @flat_markup = flat_markup
 
-      @pmc = people_markup_calculator   || PeopleMarkupCalculator.new(people.abs)
+      @pmc = people_markup_calculator   || PeopleMarkupCalculator.new(people)
 
       @mmc = material_markup_calculator || MaterialMarkupCalculator.new(material)
     end
